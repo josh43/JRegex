@@ -16,6 +16,8 @@
 
 class RegularParser : public Parser {
     /*
+     *
+     * This is the grammar
  basic_reg_exp  :          RE_expression
                | L_ANCHOR
                |                        R_ANCHOR

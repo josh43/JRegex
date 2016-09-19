@@ -14,7 +14,6 @@ public:
     RegularLexer(string input): Lexer(input) {
             bracketOpenCount = 0;
     }
-    // dont pass in [-asd]
     //               ^
 
 
