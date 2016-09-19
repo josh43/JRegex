@@ -1,0 +1,52 @@
+//
+
+//
+
+//LANGUAGEIMPLEMENTATIONPATTERNS_TEST_H
+
+// Created by joshua on 8/11/16.
+
+//#include "DataStructures.h"
+
+// pair<Vertex *, Vertex *> onTransition(unsigned char x) {
+
+//     for (Edge edge : edgeList) {
+
+//         if (edge.val == x) {
+
+//             return pair(edge.v1, edge.v2);
+
+//         } else if (edge.epsilon) {
+
+//             return {edge.v2, nullptr};
+
+//         }
+
+//         return {nullptr, nullptr};
+
+//     }
+
+// }
+
+// the first regularnode can determine if the whole epxression is
+
+// star'd plus'd or questioned
+
+// add all data to this
+
+//curr->addTransition({},)
+
+// else do nothing
+
+//transition(closure,str[currentIndex]);
+
+// reset because not in a valid state
+
+//currentIndex+=
+
+// it must have been the end
+
+// out of the ones you can transition to
+
+// you must compute the closure for every vertex
+

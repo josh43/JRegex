@@ -1,0 +1,9 @@
+namespace Regex {
+    class Vertex;    using namespace std;    struct Edge {        static const unsigned char EPSILON = (1 << 8) - 1;        Edge(unsigned char data) {            val = data;            v1 = nullptr; v1IsEpsilon = false;            v2 = nullptr; v2IsEpsilon = false;        }
+        }
+struct Vertex {
+        Vertex():Vertex(Edge::EPSILON){ }
+class RegularGraph {
+    public:        static pair<Vertex *,Vertex * > getGraphFrom(RegularDeque &regStack) {            stack<pair<Vertex *, Vertex * > > vertStack;            if (regStack.isEmpty()) {                throw std::invalid_argument("You need to at least have on character for matching a regexp");            }       }
+class EpsilonNFA{
+    public:        Vertex * start; Vertex * end;        EpsilonNFA(Vertex * s, Vertex * e):start(s),end(e){        }   }

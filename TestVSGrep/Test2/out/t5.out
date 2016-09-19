@@ -1,0 +1,43 @@
+if (edge.val == x) {
+        //             return pair(edge.v1, edge.v2);        //         }}
+if (edge.epsilon) {
+        //             return {edge.v2, nullptr}
+if (!curr) { return nullptr; }
+if (curr->visited) { if(verbose){printf("Already visited %p returning \n",curr);}
+if (depth < 0) { return nullptr;printf("Ran out of depth returning \n"); }
+if(curr->edge == nullptr){throw std::invalid_argument("Edge was null need to initalize!");}
+if (curr->edge->val == x) {
+                printf("Found x at %p returning vertex %p \n",curr,curr->edge->v1);                Vertex::resetVerts(toReset);                return curr->edge->v1;            }  }
+if (res == nullptr) {
+                    printf("Searching at %p ->v2 %p  \n",curr,curr->edge->v2);                    return dfs(curr->edge->v2, depth - 1, x, toReset);                } }
+if(type & DATA_NODE){
+                    // add all data to this                    if(node->regularData != "") {                        curr->edge->val = node->regularData.front();                    }   }
+if(type & OR_NODE){
+                    pair<Vertex *, Vertex *> last = getDataNodeFrom(node->right);                    node = node->left;                    while(node->nodeType & OR_NODE){                        pair<Vertex * , Vertex *>  orNode = getDataNodeFrom(node->right);                        last = orExpressions(last,orNode);                        node = node->left;                    }     }
+if(curr->edge->v2){
+                    throw std::invalid_argument("Cannot have the second vertex set when bridging!!");                } }
+if(end == nullptr){ throw std::invalid_argument("End needs to not be nullptr!!"); }
+if(type & PLUS_NODE){
+                if(!end->edge || end->edge->v2){                    throw std::invalid_argument("This should not occur");                } }
+if(type & STAR_NODE){
+                if(end->edge->v1 || end->edge->v2){                    throw std::invalid_argument("The End should not have any edges!!");                } }
+if(type & QUESTION_NODE){
+                if(end->edge->v1 || end->edge->v2){                    throw std::invalid_argument("The End should not have any edges!!");                } }
+if(node->regularData != "") {
+                curr->edge->val = node->regularData.front();                curr = curr->edge->v1;            } }
+if(curr == nullptr && start->edge->v1 == nullptr) {
+                start->edge->v1 = new Vertex();                curr = start->edge->v1;            }  }
+if(str[currentIndex]< 0){
+                    str[currentIndex] =std::numeric_limits<unsigned char>::min() + (-str[currentIndex]);                }}
+if(verbose){
+                for(pair<string,int> match : matches){                    printf( ANSI_COLOR_BLUE "  Match Found : %s @ %i" ANSI_COLOR_RESET " \n " ,match.first.c_str(),match.second);                } }
+if(v->edge->val == letter){
+                    if(v->edge->v1) {                        newClosure.insert(v->edge->v1);                    } }
+if(v == nullptr){ return;}
+if(v->visited){return;}
+if(v->edge->v1IsEpsilon || v->edge->val == Edge::EPSILON){
+                closureHelper(v->edge->v1,vertList);            }}
+if(v->edge->v2IsEpsilon|| v->edge->val == Edge::EPSILON){
+                closureHelper(v->edge->v2,vertList);            }}
+if(x == end){
+                    return true;                }}
