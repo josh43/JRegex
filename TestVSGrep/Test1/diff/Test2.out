@@ -1,0 +1,35 @@
+0a1
+> //
+1a3,7
+> //
+> 
+> #ifn
+> //LANGUAGEIMPLEMENTATIONPATTERNS_TEST_H
+> //
+2a9,13
+> //
+> 
+> 
+> 
+> #in
+5c16,18
+< //             return
+---
+> //     for (Edge edge : edgeList) {
+>         //         if (edge.val == x) {
+>         //             return
+8c21,26
+< //         return
+---
+> //         }
+>         //         return
+> //     }
+>         // }
+> 
+>         static void prin
+10a29,30
+> // add all data to this
+>                     if(n
+17a38,39
+> // you must compute the closure for every vertex
+>                 set<Vertex *> return

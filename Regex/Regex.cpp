@@ -17,15 +17,9 @@ namespace JRegex {
         return toReturn;
     }
 
-    Regex &Regex::matchLongest() {
-        shouldMatchLongest = true;
-        return *this;
-    }
 
-    Regex &Regex::matchShortest() {
-        shouldMatchLongest = false;
-        return *this;
-    }
+
+
 
     Regex &Regex::match(std::string str,bool isFile) {
 
@@ -44,16 +38,21 @@ namespace JRegex {
                 printf("File is bigger than 4 gigabytes, this may not be intended, if this is ok remove this check\n @FILE : %s    @LINE  %d\n\n",__FILE__,__LINE__);
                 throw std::invalid_argument("");
             }
-            std::string buf;  buf.reserve(size);
-            fread(&buf[0],1,size,file);
+            std::string buf;  buf.resize(size+1);
+
+           fread(&buf[0],1,size,file);
+            fclose(file);
+            buf[size] = '\0';
+
             if(matcher) {
-                matchedOne = matcher->match(buf, verbosePrinting, shouldMatchLongest);
+                matchedOne = matcher->match(buf, verbosePrinting, true);
+
             }else{
                 matchedOne = dfaMatcher->match(buf,verbosePrinting);
             }
         }else{
             if(matcher) {
-                matchedOne = matcher->match(str, verbosePrinting, shouldMatchLongest);
+                matchedOne = matcher->match(str, verbosePrinting, true);
             }else{
                 matchedOne = dfaMatcher->match(str,verbosePrinting);
             }
@@ -135,7 +134,6 @@ namespace JRegex {
     Regex::Regex(std::string str ) {
         matchedOne = false;
         verbosePrinting = false;
-        shouldMatchLongest = true;
         out = NULL;
         toMatch = str;
         RegularParser strToRegexParser(new RegularLexer(toMatch));
@@ -146,4 +144,8 @@ namespace JRegex {
         matcher = new EpsilonNFAMatcher(graph->getGraph());
 
     }
+
+
+
+
 }

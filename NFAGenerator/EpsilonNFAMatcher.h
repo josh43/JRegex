@@ -14,7 +14,10 @@ namespace JRegex {
     using namespace std;
 class EpsilonNFAMatcher {
     public:
+        static const int O_FLAG = 0;
+        static const int LINE_FLAG = 1;
         vector<string> wordMatches;
+        vector<pair<int,int> > newLineLocations;
         Vertex *start;
         Vertex *end;
 
@@ -30,28 +33,29 @@ class EpsilonNFAMatcher {
         bool match( std::string & str, bool verbose = false,bool matchLongest = true) {
             vector<pair<string, int> > matches;
 
+
             int currentIndex = 0;
             int longestMatch = -1;
             set<Vertex *>  lastClosure;
             lastClosure.insert(start);
             int startIndex = 0;
-            str.insert(str.begin(),'\n');
-            str.push_back('\n');
+
             while ((uint)startIndex < str.length()) {
                 set<Vertex *> closure;
                 while (canTransitionOn(str[currentIndex], lastClosure, closure)&&currentIndex < str.length()) {
+
                     currentIndex++;
                     //transition(closure,str[currentIndex]);
                     if (foundEnd(closure, end)) {
                             if (longestMatch < currentIndex - startIndex) {
                                 longestMatch = currentIndex - startIndex;
                             }
-                        matches.push_back({str.substr(startIndex, currentIndex - startIndex), startIndex});
                     }
                     lastClosure = closure;
                 }
 
                 if(longestMatch != -1){
+                    matches.push_back({str.substr(startIndex, currentIndex - startIndex), startIndex});
                     currentIndex--;
                 }
                 longestMatch = -1;

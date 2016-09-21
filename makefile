@@ -4,7 +4,7 @@
 #directories to search for
 VPATH = Lexer:Parser:NFAGenerator:TestVSGrep/Test2:Regex:DFAGenerator:Regex/TestPackage
 CC = g++
-FLAGS = -Wall -std=c++14
+FLAGS = -Wall -std=c++11
 
 main : main.o Utility.o Regex.o
 	$(CC) $(FLAGS) main.o Utility.o Regex.o -o main

@@ -23,18 +23,18 @@ namespace JRegex {
         // When chaining it is important to call methods in order
         // AKA call methods as they appearfrom top of header file to bottom of header file
         // EX regex.matchLongest().verbose().match("file.in",true).output("file.out");
-        Regex & matchLongest ();
-        Regex & matchShortest();
         Regex & verbose();
         Regex & match (std::string,bool isFile=false);
         void    output(std::string);
         void    output();
         bool    result();
+
+
     private:
         Regex(std::string str);
         bool verbosePrinting;
-        bool shouldMatchLongest;
         bool matchedOne;
+        int flags;
         std::string toMatch;
         FILE * out;
         EpsilonNFAMatcher * matcher;

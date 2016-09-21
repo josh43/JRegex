@@ -1,6 +1,7 @@
 #include <signal.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <cstring>
 #include "Lexer/Lexer.h"
 using namespace std;
 #define funcError() printf("%s\n line: %d file: %s",__PRETTY_FUNCTION__,__LINE__,__FILE__); printStackTrace()
@@ -47,4 +48,4 @@ if(expression){\
 #define ANSI_COLOR_CYAN    "\x1b[36m"
 #define ANSI_COLOR_RESET   "\x1b[0m"
 void printError(string errorMessage,string str,char expected,int hint);
-
+void stdinToString( std::string & buffer,bool verbose);

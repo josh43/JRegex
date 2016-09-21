@@ -1,0 +1,7 @@
+if (!curr) { return nullptr; }
+if (curr->visited) { if(verbose){printf("Already visited %p returning \n",curr);}
+if (depth < 0) { return nullptr;printf("Ran out of depth returning \n"); }
+if(curr->edge == nullptr){throw std::invalid_argument("Edge was null need to initalize!");}
+if(end == nullptr){ throw std::invalid_argument("End needs to not be nullptr!!"); }
+if(v == nullptr){ return;}
+if(v->visited){return;}
